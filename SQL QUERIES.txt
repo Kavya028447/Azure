@@ -1,0 +1,67 @@
+-- create
+CREATE TABLE EMPLOYEE (
+  empId INTEGER ,
+  name TEXT NOT NULL
+);
+
+-- insert
+INSERT INTO EMPLOYEE VALUES (0001, 'Clark');
+INSERT INTO EMPLOYEE VALUES (0002, 'Dave');
+INSERT INTO EMPLOYEE VALUES (0003, 'Ava');
+
+
+/*CREATE VIEW EMPLOYEE_VIEW AS select * FROM EMPLOYEE; 
+
+SELECT * FROM EMPLOYEE_VIEW;
+
+INSERT INTO EMPLOYEE_VIEW VALUES(0004,'ABC');
+
+SELECT * from EMPLOYEE_VIEW;
+
+SELECT * from EMPLOYEE;
+
+alter table EMPLOYEE add column department text;
+
+create or replace VIEW EMPLOYEE_VIEW as select empId,name,department from EMPLOYEE;
+
+create index idx_employee_name on EMPLOYEE(name(255));
+
+show index from EMPLOYEE;
+
+alter table EMPLOYEE add primary key(empId);
+
+desc EMPLOYEE;
+
+select ('helooooooo');
+
+select ('heloo') from employee as greeting;*/
+
+create table office(empId INTEGER,location TEXT);
+
+INSERT into office values(0001,'hyderabad');
+INSERT into office values(0002,'bengaluru');
+INSERT into office values(0003,'mumbai');
+
+select name,location from employee inner join office on employee.empId=office.empId;
+
+select name,location from employee left join office on employee.empId=office.empId;
+
+select name,location from employee right join office on employee.empId=office.empId;
+
+select name,location from employee left join office on employee.empId=office.empId union select name,location from employee right join office on employee.empId=office.empId;
+
+CREATE TABLE EMPLOYEE (
+  empId INTEGER ,
+  name TEXT NOT NULL
+);
+
+-- insert
+INSERT INTO EMPLOYEE VALUES (0001, 'Clark');
+INSERT INTO EMPLOYEE VALUES (0002, 'Dave');
+INSERT INTO EMPLOYEE VALUES (0003, 'Ava');
+
+select * from EMPLOYEE;
+--copying schema without values
+create table sch like employee;
+
+desc sch;
